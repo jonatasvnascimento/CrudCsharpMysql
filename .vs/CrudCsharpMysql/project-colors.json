@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "865fcff4-0c42-4d71-a564-39840fdce58f": {
+      "ProjectGuid": "865fcff4-0c42-4d71-a564-39840fdce58f",
+      "DisplayName": "CrudCsharpMysql",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
