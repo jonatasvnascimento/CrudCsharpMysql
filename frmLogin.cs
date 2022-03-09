@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CrudCsharpMysql.model;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,14 +43,31 @@ namespace CrudCsharpMysql
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "123")
+            MySqlConnection conn = new MySqlConnection(connectDB.strConn);
+
+            try
             {
-                MessageBox.Show("Logado");
+                conn.Open();
+                string xQuery = "select * from actor limit 1";
+                var cmd = new MySqlCommand(xQuery, conn);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("não logado");
+                MessageBox.Show($"Erro: {ex}");
             }
+            finally
+            {
+                conn.Close();
+            }
+
+            //if (txtUsername.Text == "admin" && txtPassword.Text == "123")
+            //{
+            //    MessageBox.Show("Logado");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("não logado");
+            //}
         }
 
         private void lblExit_Click(object sender, EventArgs e)

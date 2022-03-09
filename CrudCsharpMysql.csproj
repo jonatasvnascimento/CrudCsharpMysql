@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
@@ -11,12 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="1.Presentation\" />
-    <Folder Include="3.Application\" />
-    <Folder Include="4.Domain\" />
-    <Folder Include="5.Repository\" />
-    <Folder Include="9.DLLs\" />
-    <Folder Include="Worker\" />
+    <Folder Include="view\" />
+    <Folder Include="controller\" />
   </ItemGroup>
 
 </Project>
