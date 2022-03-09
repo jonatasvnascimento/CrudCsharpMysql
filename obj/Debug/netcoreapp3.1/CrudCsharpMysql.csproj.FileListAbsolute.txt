@@ -28,3 +28,4 @@ C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\netcoreapp3.1\C
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\netcoreapp3.1\CrudCsharpMysql.dll
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\netcoreapp3.1\CrudCsharpMysql.pdb
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\netcoreapp3.1\CrudCsharpMysql.genruntimeconfig.cache
+C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\netcoreapp3.1\CrudCsharpMysql.frmLogin.resources
