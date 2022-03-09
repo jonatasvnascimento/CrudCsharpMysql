@@ -11,9 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="model\" />
-    <Folder Include="controller\" />
-    <Folder Include="view\" />
+    <Folder Include="1.Presentation\" />
+    <Folder Include="3.Application\" />
+    <Folder Include="4.Domain\" />
+    <Folder Include="5.Repository\" />
+    <Folder Include="9.DLLs\" />
+    <Folder Include="Worker\" />
   </ItemGroup>
 
 </Project>
