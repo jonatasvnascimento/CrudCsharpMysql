@@ -38,6 +38,9 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblExit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
@@ -45,7 +48,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label6.Location = new System.Drawing.Point(81, 425);
+            this.label6.Location = new System.Drawing.Point(81, 451);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 16);
             this.label6.TabIndex = 19;
@@ -56,7 +59,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(63, 397);
+            this.label5.Location = new System.Drawing.Point(64, 396);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 16);
             this.label5.TabIndex = 18;
@@ -68,7 +71,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button2.Location = new System.Drawing.Point(30, 344);
+            this.button2.Location = new System.Drawing.Point(28, 344);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(216, 35);
             this.button2.TabIndex = 16;
@@ -83,7 +86,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(30, 293);
+            this.button1.Location = new System.Drawing.Point(28, 293);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 35);
             this.button1.TabIndex = 17;
@@ -95,11 +98,12 @@
             // 
             this.checkbxShowPassword.AutoSize = true;
             this.checkbxShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkbxShowPassword.Location = new System.Drawing.Point(119, 251);
+            this.checkbxShowPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkbxShowPassword.Location = new System.Drawing.Point(182, 250);
             this.checkbxShowPassword.Name = "checkbxShowPassword";
-            this.checkbxShowPassword.Size = new System.Drawing.Size(127, 21);
+            this.checkbxShowPassword.Size = new System.Drawing.Size(59, 20);
             this.checkbxShowPassword.TabIndex = 15;
-            this.checkbxShowPassword.Text = "Show Password";
+            this.checkbxShowPassword.Text = "Show";
             this.checkbxShowPassword.UseVisualStyleBackColor = true;
             this.checkbxShowPassword.CheckedChanged += new System.EventHandler(this.checkbxShowPassword_CheckedChanged);
             // 
@@ -157,12 +161,48 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Get Started";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(28, 250);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 20);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Remenber me";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(78, 424);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 16);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Forgot Password?";
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblExit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblExit.Location = new System.Drawing.Point(257, 3);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(14, 16);
+            this.lblExit.TabIndex = 22;
+            this.lblExit.Text = "x";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(274, 544);
+            this.Controls.Add(this.lblExit);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
@@ -196,5 +236,8 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblExit;
     }
 }

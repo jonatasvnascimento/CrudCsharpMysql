@@ -58,5 +58,10 @@ namespace CrudCsharpMysql
             txtPassword.Text = "";
             txtUsername.Text = "";
         }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

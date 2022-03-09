@@ -40,6 +40,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblExit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -180,12 +181,25 @@
             this.label6.Text = "Back to LOGIN";
             this.label6.Click += new System.EventHandler(this.label6_Click_1);
             // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblExit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblExit.Location = new System.Drawing.Point(261, 3);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(14, 16);
+            this.lblExit.TabIndex = 23;
+            this.lblExit.Text = "x";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(278, 544);
+            this.Controls.Add(this.lblExit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
@@ -223,5 +237,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblExit;
     }
 }

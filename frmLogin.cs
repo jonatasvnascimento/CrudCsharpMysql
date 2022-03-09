@@ -50,5 +50,10 @@ namespace CrudCsharpMysql
                 MessageBox.Show("não logado");
             }
         }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
