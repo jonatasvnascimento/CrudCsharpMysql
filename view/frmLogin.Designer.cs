@@ -1,4 +1,4 @@
-﻿namespace CrudCsharpMysql
+﻿namespace CrudCsharpMysql.view
 {
     partial class frmLogin
     {
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblCriarConta = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.checkbxShowPassword = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.checkBoxLembrarSenha = new System.Windows.Forms.CheckBox();
+            this.lblEsqueceuSenha = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label6
+            // lblCriarConta
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label6.Location = new System.Drawing.Point(81, 451);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 16);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Create Account";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lblCriarConta.AutoSize = true;
+            this.lblCriarConta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCriarConta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.lblCriarConta.Location = new System.Drawing.Point(81, 451);
+            this.lblCriarConta.Name = "lblCriarConta";
+            this.lblCriarConta.Size = new System.Drawing.Size(109, 16);
+            this.lblCriarConta.TabIndex = 19;
+            this.lblCriarConta.Text = "Create Account";
+            this.lblCriarConta.Click += new System.EventHandler(this.lblCriarConta_Click);
             // 
             // label5
             // 
@@ -65,34 +65,34 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Dont Have an Account";
             // 
-            // button2
+            // btnLimpar
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button2.Location = new System.Drawing.Point(28, 344);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(216, 35);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "CLEAR";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnLimpar.BackColor = System.Drawing.Color.White;
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btnLimpar.Location = new System.Drawing.Point(28, 344);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(216, 35);
+            this.btnLimpar.TabIndex = 16;
+            this.btnLimpar.Text = "CLEAR";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(28, 293);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 35);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "LOGIN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(28, 293);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(216, 35);
+            this.btnLogin.TabIndex = 17;
+            this.btnLogin.Text = "LOGIN";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // checkbxShowPassword
             // 
@@ -161,26 +161,26 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Get Started";
             // 
-            // checkBox1
+            // checkBoxLembrarSenha
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.Location = new System.Drawing.Point(28, 250);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 20);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Remenber me";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxLembrarSenha.AutoSize = true;
+            this.checkBoxLembrarSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxLembrarSenha.Location = new System.Drawing.Point(28, 250);
+            this.checkBoxLembrarSenha.Name = "checkBoxLembrarSenha";
+            this.checkBoxLembrarSenha.Size = new System.Drawing.Size(116, 20);
+            this.checkBoxLembrarSenha.TabIndex = 20;
+            this.checkBoxLembrarSenha.Text = "Remenber me";
+            this.checkBoxLembrarSenha.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // lblEsqueceuSenha
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(78, 424);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 16);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Forgot Password?";
+            this.lblEsqueceuSenha.AutoSize = true;
+            this.lblEsqueceuSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEsqueceuSenha.Location = new System.Drawing.Point(78, 424);
+            this.lblEsqueceuSenha.Name = "lblEsqueceuSenha";
+            this.lblEsqueceuSenha.Size = new System.Drawing.Size(118, 16);
+            this.lblEsqueceuSenha.TabIndex = 21;
+            this.lblEsqueceuSenha.Text = "Forgot Password?";
             // 
             // lblExit
             // 
@@ -192,7 +192,6 @@
             this.lblExit.Size = new System.Drawing.Size(14, 16);
             this.lblExit.TabIndex = 22;
             this.lblExit.Text = "x";
-            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // frmLogin
             // 
@@ -201,12 +200,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(274, 544);
             this.Controls.Add(this.lblExit);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblEsqueceuSenha);
+            this.Controls.Add(this.checkBoxLembrarSenha);
+            this.Controls.Add(this.lblCriarConta);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.checkbxShowPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
@@ -226,18 +225,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblCriarConta;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.CheckBox checkbxShowPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBoxLembrarSenha;
+        private System.Windows.Forms.Label lblEsqueceuSenha;
         private System.Windows.Forms.Label lblExit;
     }
 }

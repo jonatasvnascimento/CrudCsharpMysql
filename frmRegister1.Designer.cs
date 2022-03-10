@@ -1,6 +1,6 @@
 ﻿namespace CrudCsharpMysql
 {
-    partial class frmRegister
+    partial class frmRegister1
     {
         /// <summary>
         ///  Required designer variable.
@@ -144,6 +144,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "REGISTER";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -168,6 +169,7 @@
             this.label5.Size = new System.Drawing.Size(176, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Already Have an Account";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 

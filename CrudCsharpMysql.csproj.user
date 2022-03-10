@@ -2,13 +2,19 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="frmRegister.cs">
+    <Compile Update="frmRegister1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmLogin.cs">
+    <Compile Update="frmLogin1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\frmAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\frmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

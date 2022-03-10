@@ -14,8 +14,6 @@ C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\bin\Debug\net5.0-windows\
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\bin\Debug\net5.0-windows\ZstdNet.dll
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.csproj.AssemblyReference.cache
-C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.frmLogin.resources
-C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.frmRegister.resources
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.csproj.GenerateResource.cache
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.AssemblyInfoInputs.cache
@@ -27,3 +25,7 @@ C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.pdb
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.genruntimeconfig.cache
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmAgenda.resources
+C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmLogin.resources
+C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmRegister.resources
+C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.frmLogin1.resources
+C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.frmRegister1.resources

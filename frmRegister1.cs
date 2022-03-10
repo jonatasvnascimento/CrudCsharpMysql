@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CrudCsharpMysql
 {
-    public partial class frmRegister : Form
+    public partial class frmRegister1 : Form
     {
-        public frmRegister()
+        public frmRegister1()
         {
             InitializeComponent();
         }
@@ -42,13 +42,13 @@ namespace CrudCsharpMysql
 
         private void label6_Click(object sender, EventArgs e)
         {
-            new frmLogin().Show();
+            new frmLogin1().Show();
             this.Hide();
         }
 
         private void label6_Click_1(object sender, EventArgs e)
         {
-            new frmLogin().Show();
+            new frmLogin1().Show();
             this.Hide();
         }
 
@@ -62,6 +62,16 @@ namespace CrudCsharpMysql
         private void lblExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
