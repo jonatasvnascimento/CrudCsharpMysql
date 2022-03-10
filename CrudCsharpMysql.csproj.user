@@ -8,5 +8,8 @@
     <Compile Update="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\frmAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

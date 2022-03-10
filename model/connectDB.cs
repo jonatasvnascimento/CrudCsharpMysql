@@ -6,12 +6,14 @@ namespace CrudCsharpMysql.model
 {
     class connectDB
     {
+        
         static private string servidor = "localhost";
-        static private string banco = "root";
-        static private string usuario = "sakila";
+        static private string banco = "db_agenda";
+        static private string usuario = "root";
         static private string senha = "Jelis@24";
 
         public static string strConn = $"server={servidor};user={usuario};database={banco};port=3306;password={senha}";
+
 
     }
    
