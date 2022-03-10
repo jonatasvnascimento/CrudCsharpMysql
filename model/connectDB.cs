@@ -8,7 +8,7 @@ namespace CrudCsharpMysql.model
     {
         
         static private string servidor = "localhost";
-        static private string banco = "db_agenda";
+        static private string banco = "openxcod";
         static private string usuario = "root";
         static private string senha = "Jelis@24";
 

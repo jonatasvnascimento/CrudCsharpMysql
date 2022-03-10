@@ -19,6 +19,17 @@ namespace CrudCsharpMysql.view
         public frmAgenda()
         {
             InitializeComponent();
+
+            listviewContatos.View = View.Details;
+            listviewContatos.LabelEdit = true;
+            listviewContatos.AllowColumnReorder = true;
+            listviewContatos.FullRowSelect = true;
+            listviewContatos.GridLines = true;
+
+            listviewContatos.Columns.Add("ID",30 ,HorizontalAlignment.Left);
+            listviewContatos.Columns.Add("Nome", 150, HorizontalAlignment.Left);
+            listviewContatos.Columns.Add("Email", 150, HorizontalAlignment.Left);
+            listviewContatos.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
         }
         private void lblExit_Click(object sender, EventArgs e)
         {
@@ -30,18 +41,18 @@ namespace CrudCsharpMysql.view
             try
             {
                 conn = new MySqlConnection(connectDB.strConn);
-                string xQuery = $"INSERT INTO contatos (nome, email, telefone) values ('{txtNome.Text}','{txtEmail.Text}','{txtTelefone.Text}') ";
+                string xQueryInsert = $"INSERT INTO contatos (nome, email, telefone) values ('{txtNome.Text}','{txtEmail.Text}','{txtTelefone.Text}') ";
 
-                MySqlCommand command = new MySqlCommand(xQuery, conn);
-
+                MySqlCommand command = new MySqlCommand(xQueryInsert, conn);
                 conn.Open();
                 command.ExecuteReader();
                 MessageBox.Show("Inserido com sucesso");
+                conn.Close();
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"{ex}");
             }
             finally
             {
@@ -54,18 +65,31 @@ namespace CrudCsharpMysql.view
             try
             {
                 conn = new MySqlConnection(connectDB.strConn);
-                string xQuery = $"INSERT INTO contatos (nome, email, telefone) values ('{txtNome.Text}','{txtEmail.Text}','{txtTelefone.Text}') ";
+                string xQuerySelect = $"select * from openxcod.contatos where nome like '%{txtBuscar.Text}%' or email like '%{txtBuscar.Text}%' ";
 
-                MySqlCommand command = new MySqlCommand(xQuery, conn);
-
+                MySqlCommand command = new MySqlCommand(xQuerySelect, conn);
                 conn.Open();
-                command.ExecuteReader();
-                MessageBox.Show("Inserido com sucesso");
+                MySqlDataReader reader = command.ExecuteReader();
+                listviewContatos.Items.Clear();
+
+                while (reader.Read())
+                {
+                    string[] row =
+                    {
+                        reader.GetString(0),
+                        reader.GetString(1),
+                        reader.GetString(2),
+                        reader.GetString(3),
+                    };
+                    var linha_listview = new ListViewItem(row);
+                    listviewContatos.Items.Add(linha_listview);
+                }
+                conn.Close();
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"{ex}");
             }
             finally
             {

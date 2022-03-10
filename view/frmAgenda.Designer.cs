@@ -38,8 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
-            this.listContatos = new System.Windows.Forms.ListView();
-            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.listviewContatos = new System.Windows.Forms.ListView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -50,9 +50,9 @@
             this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.btnLimpar.Location = new System.Drawing.Point(148, 305);
+            this.btnLimpar.Location = new System.Drawing.Point(36, 361);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(148, 35);
+            this.btnLimpar.Size = new System.Drawing.Size(145, 35);
             this.btnLimpar.TabIndex = 16;
             this.btnLimpar.Text = "CLEAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -64,9 +64,9 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(148, 252);
+            this.btnSalvar.Location = new System.Drawing.Point(208, 361);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(148, 35);
+            this.btnSalvar.Size = new System.Drawing.Size(145, 35);
             this.btnSalvar.TabIndex = 17;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -76,11 +76,11 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.Location = new System.Drawing.Point(36, 201);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(260, 35);
+            this.txtEmail.Size = new System.Drawing.Size(317, 35);
             this.txtEmail.TabIndex = 12;
             // 
             // label4
@@ -97,11 +97,11 @@
             // 
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefone.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTelefone.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTelefone.Location = new System.Drawing.Point(36, 137);
             this.txtTelefone.Multiline = true;
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(260, 35);
+            this.txtTelefone.Size = new System.Drawing.Size(317, 35);
             this.txtTelefone.TabIndex = 13;
             // 
             // label3
@@ -118,11 +118,11 @@
             // 
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNome.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNome.Location = new System.Drawing.Point(36, 77);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(260, 35);
+            this.txtNome.Size = new System.Drawing.Size(317, 35);
             this.txtNome.TabIndex = 14;
             // 
             // label2
@@ -151,40 +151,40 @@
             this.lblExit.AutoSize = true;
             this.lblExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblExit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblExit.Location = new System.Drawing.Point(841, 3);
+            this.lblExit.Location = new System.Drawing.Point(967, 2);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(14, 16);
             this.lblExit.TabIndex = 24;
             this.lblExit.Text = "x";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
-            // listContatos
+            // listviewContatos
             // 
-            this.listContatos.BackColor = System.Drawing.Color.White;
-            this.listContatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.listContatos.HideSelection = false;
-            this.listContatos.Location = new System.Drawing.Point(320, 118);
-            this.listContatos.Name = "listContatos";
-            this.listContatos.Size = new System.Drawing.Size(516, 222);
-            this.listContatos.TabIndex = 25;
-            this.listContatos.UseCompatibleStateImageBehavior = false;
+            this.listviewContatos.BackColor = System.Drawing.Color.White;
+            this.listviewContatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.listviewContatos.HideSelection = false;
+            this.listviewContatos.Location = new System.Drawing.Point(372, 118);
+            this.listviewContatos.Name = "listviewContatos";
+            this.listviewContatos.Size = new System.Drawing.Size(593, 278);
+            this.listviewContatos.TabIndex = 25;
+            this.listviewContatos.UseCompatibleStateImageBehavior = false;
             // 
-            // txtBusca
+            // txtBuscar
             // 
-            this.txtBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.txtBusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBusca.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBusca.Location = new System.Drawing.Point(320, 77);
-            this.txtBusca.Multiline = true;
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(381, 35);
-            this.txtBusca.TabIndex = 26;
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBuscar.Location = new System.Drawing.Point(372, 77);
+            this.txtBuscar.Multiline = true;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(458, 35);
+            this.txtBuscar.TabIndex = 26;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(320, 58);
+            this.label1.Location = new System.Drawing.Point(372, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 27;
@@ -197,7 +197,7 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(707, 77);
+            this.btnBuscar.Location = new System.Drawing.Point(836, 77);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(129, 35);
             this.btnBuscar.TabIndex = 28;
@@ -210,11 +210,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(858, 366);
+            this.ClientSize = new System.Drawing.Size(984, 411);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBusca);
-            this.Controls.Add(this.listContatos);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.listviewContatos);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
@@ -246,8 +246,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblExit;
-        private System.Windows.Forms.ListView listContatos;
-        private System.Windows.Forms.TextBox txtBusca;
+        private System.Windows.Forms.ListView listviewContatos;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
     }

@@ -44,32 +44,46 @@ namespace CrudCsharpMysql
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //MySqlConnection conn = new MySqlConnection(connectDB.strConn);
-
-            //try
-            //{
-            //    conn.Open();
-            //    string xQuery = "select * from actor limit 1";
-            //    var cmd = new MySqlCommand(xQuery, conn);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Erro: {ex}");
-            //}
-            //finally
-            //{
-            //    conn.Close();
-            //}
-
-            if (txtUsername.Text == "" && txtPassword.Text == "")
+            bool control = false;
+            try
             {
-                new frmAgenda().Show();
-                this.Hide();
+                //txtUsername.Text = "admin";
+                //txtPassword.Text = "123";
+                MySqlConnection conn = new MySqlConnection(connectDB.strConn);
+
+                string xQuerySelect = $"SELECT * FROM openxcod.usuarios where login = '{txtUsername.Text}' and senha = '{txtPassword.Text}' ";
+                MySqlCommand command = new MySqlCommand(xQuerySelect, conn);
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string user = reader.GetString(2);
+                    string pass = reader.GetString(3);
+                    control = true;
+                    if (txtUsername.Text == user && txtPassword.Text == pass)
+                    {
+                        new frmAgenda().Show();
+                        this.Hide();
+                        control = true;
+                    }
+                    
+                }
+                if (control == false)
+                {
+                    MessageBox.Show("Usuario ou senha invalidos!");
+                }
+                conn.Close();
+                
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("não logado");
+
+                MessageBox.Show($"{ex}");
             }
+
+
+           
         }
 
         private void lblExit_Click(object sender, EventArgs e)
