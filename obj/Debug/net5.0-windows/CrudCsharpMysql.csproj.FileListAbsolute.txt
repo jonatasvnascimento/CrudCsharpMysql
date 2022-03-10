@@ -27,5 +27,3 @@ C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmAgenda.resources
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmLogin.resources
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmRegister.resources
-C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.frmLogin1.resources
-C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.frmRegister1.resources
