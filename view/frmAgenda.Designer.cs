@@ -50,7 +50,7 @@
             this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.btnLimpar.Location = new System.Drawing.Point(36, 361);
+            this.btnLimpar.Location = new System.Drawing.Point(36, 611);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(145, 35);
             this.btnLimpar.TabIndex = 16;
@@ -64,7 +64,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(208, 361);
+            this.btnSalvar.Location = new System.Drawing.Point(208, 611);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(145, 35);
             this.btnSalvar.TabIndex = 17;
@@ -140,7 +140,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label7.Location = new System.Drawing.Point(36, 14);
+            this.label7.Location = new System.Drawing.Point(452, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 32);
             this.label7.TabIndex = 8;
@@ -151,7 +151,7 @@
             this.lblExit.AutoSize = true;
             this.lblExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblExit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblExit.Location = new System.Drawing.Point(967, 2);
+            this.lblExit.Location = new System.Drawing.Point(1027, 3);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(14, 16);
             this.lblExit.TabIndex = 24;
@@ -165,7 +165,7 @@
             this.listviewContatos.HideSelection = false;
             this.listviewContatos.Location = new System.Drawing.Point(372, 118);
             this.listviewContatos.Name = "listviewContatos";
-            this.listviewContatos.Size = new System.Drawing.Size(593, 278);
+            this.listviewContatos.Size = new System.Drawing.Size(660, 528);
             this.listviewContatos.TabIndex = 25;
             this.listviewContatos.UseCompatibleStateImageBehavior = false;
             // 
@@ -177,7 +177,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(372, 77);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(458, 35);
+            this.txtBuscar.Size = new System.Drawing.Size(525, 35);
             this.txtBuscar.TabIndex = 26;
             // 
             // label1
@@ -197,7 +197,7 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(836, 77);
+            this.btnBuscar.Location = new System.Drawing.Point(903, 77);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(129, 35);
             this.btnBuscar.TabIndex = 28;
@@ -210,7 +210,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 411);
+            this.ClientSize = new System.Drawing.Size(1044, 658);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
