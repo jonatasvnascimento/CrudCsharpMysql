@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CrudCsharpMysql.model
 {
-    class connectDB
+    class ConnectDB
     {
 
         static private string server = "localhost";

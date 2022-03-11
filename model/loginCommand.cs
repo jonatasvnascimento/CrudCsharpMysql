@@ -7,18 +7,16 @@ using System.Threading.Tasks;
 
 namespace CrudCsharpMysql.model
 {
-    public class loginCommand
+    public class LoginCommand
     {
         public bool haveLogin = false;
-        public string message = "";
-
+        public string messageError = "";
+        MySqlConnection conn = new MySqlConnection(ConnectDB.strConn);
+        MySqlCommand cmd = new MySqlCommand();
         public bool verifLogin(string login, string password)
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection(connectDB.strConn);
-                MySqlCommand cmd = new MySqlCommand();
-
                 conn.Open();
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM openxcod.usuarios WHERE login = @login and senha = @password ";
@@ -40,7 +38,7 @@ namespace CrudCsharpMysql.model
             }
             catch (MySqlException ex)
             {
-                this.message = ex.Message;
+                this.messageError = ex.Message;
             }
 
             return haveLogin;
@@ -48,7 +46,7 @@ namespace CrudCsharpMysql.model
         public string register(string login, string password, string confirmPassword)
         {
             //sql registrar o usuário
-            return message;
+            return messageError;
         }
 
     }

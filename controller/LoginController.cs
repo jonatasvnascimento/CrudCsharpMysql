@@ -7,26 +7,27 @@ using System.Threading.Tasks;
 
 namespace CrudCsharpMysql.controller
 {
-    public class Controle
+    public class LoginController
     {
         public bool haveLogin;
-        public string message = "";
+        public string messageError = "";
 
         public bool access(string login, string password)
         {
-            loginCommand loginDB = new loginCommand();
+            LoginCommand loginDB = new LoginCommand();
             haveLogin = loginDB.verifLogin(login, password);
 
-            if (!loginDB.message.Equals(""))
+            if (!loginDB.messageError.Equals(""))
             {
-                this.message = loginDB.message;
+                this.messageError = loginDB.messageError;
             }
 
             return haveLogin;
         }
         public string register(string login, string senha)
         {
-            return message;
+            return messageError;
         }
+        
     }
 }

@@ -22,18 +22,26 @@ namespace CrudCsharpMysql.view
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Controle controle = new Controle();
+            LoginController controle = new LoginController();
             //controle.access(txtUsername.Text, txtPassword.Text);
             controle.access("admin", "123");
-            if (controle.haveLogin)
+            if (controle.messageError.Equals(""))
             {
-                new frmPrincipal().Show();
-                this.Hide();
+                if (controle.haveLogin)
+                {
+                    new frmPrincipal().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario ou senha invalidos!");
+                }
             }
             else
             {
-                MessageBox.Show("Usuario ou senha invalidos!");
+                MessageBox.Show(controle.messageError);
             }
+            
 
             #region
             //bool control = false;
@@ -41,7 +49,7 @@ namespace CrudCsharpMysql.view
             //{
             //    //txtUsername.Text = "admin";
             //    //txtPassword.Text = "123";
-            //    MySqlConnection conn = new MySqlConnection(connectDB.strConn);
+            //    MySqlConnection conn = new MySqlConnection(ConnectDB.strConn);
 
             //    string xQuerySelect = $"SELECT * FROM openxcod.usuarios where login = '{txtUsername.Text}' and senha = '{txtPassword.Text}' ";
             //    MySqlCommand command = new MySqlCommand(xQuerySelect, conn);
