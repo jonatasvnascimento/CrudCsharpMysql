@@ -13,7 +13,9 @@ namespace CrudCsharpMysql.model
         public string messageError = "";
         MySqlConnection conn = new MySqlConnection(ConnectDB.strConn);
         MySqlCommand cmd = new MySqlCommand();
-        public bool save(string name, string email, string phone)
+        private MySqlDataReader readers;
+
+        public bool Save(string name, string email, string phone)
         {
             try
             {
@@ -33,6 +35,10 @@ namespace CrudCsharpMysql.model
             {
                 this.messageError = ex.Message;
             }
+            catch (Exception ex)
+            {
+                this.messageError = ex.Message;
+            }
             finally
             {
                 conn.Close ();
@@ -48,6 +54,54 @@ namespace CrudCsharpMysql.model
             }
 
             return sucess;
+        }
+        public MySqlDataReader Read(string search)
+        {
+            string[] searchRows = { };
+
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = "select * from openxcod.contatos where nome like @search or email like @search ";
+                cmd.Parameters.AddWithValue("@search", $"%{search}%");
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                readers = reader;
+                //while (reader.Read())
+                //{
+                //    string[] row =
+                //    {
+                //        reader.GetString(0),
+                //        reader.GetString(1),
+                //        reader.GetString(2),
+                //        reader.GetString(3),
+                //    };
+                //}
+            }
+            catch (MySqlException ex)
+            {
+                this.messageError = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                this.messageError = ex.Message;
+            }
+            
+            
+
+            if (messageError.Equals(""))
+            {
+                sucess = true;
+            }
+            else
+            {
+                sucess = false;
+            }
+
+            return readers;
         }
     }
 }

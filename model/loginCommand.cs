@@ -11,12 +11,13 @@ namespace CrudCsharpMysql.model
     {
         public bool haveLogin = false;
         public string messageError = "";
-        MySqlConnection conn = new MySqlConnection(ConnectDB.strConn);
-        MySqlCommand cmd = new MySqlCommand();
+        
         public bool verifLogin(string login, string password)
         {
             try
             {
+                MySqlConnection conn = new MySqlConnection(ConnectDB.strConn);
+                MySqlCommand cmd = new MySqlCommand();
                 conn.Open();
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM openxcod.usuarios WHERE login = @login and senha = @password ";
@@ -37,6 +38,10 @@ namespace CrudCsharpMysql.model
                 conn.Close();
             }
             catch (MySqlException ex)
+            {
+                this.messageError = ex.Message;
+            }
+            catch (Exception ex)
             {
                 this.messageError = ex.Message;
             }

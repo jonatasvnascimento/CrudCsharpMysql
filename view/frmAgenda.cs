@@ -17,6 +17,7 @@ namespace CrudCsharpMysql.view
     {
         MySqlConnection conn;
 
+
         public frmAgenda()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace CrudCsharpMysql.view
             listviewContatos.FullRowSelect = true;
             listviewContatos.GridLines = true;
 
-            listviewContatos.Columns.Add("ID",30 ,HorizontalAlignment.Left);
+            listviewContatos.Columns.Add("ID", 30, HorizontalAlignment.Left);
             listviewContatos.Columns.Add("Nome", 150, HorizontalAlignment.Left);
             listviewContatos.Columns.Add("Email", 150, HorizontalAlignment.Left);
             listviewContatos.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
@@ -40,18 +41,22 @@ namespace CrudCsharpMysql.view
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             AgendaController agendaController = new AgendaController();
-            //agendaController.Insert(txtNome.Text, txtEmail.Text, txtTelefone.Text);
-            agendaController.Insert("teste", "teste@teste", "11 5621-3231");
+            agendaController.Insert(txtNome.Text, txtEmail.Text, txtTelefone.Text);
+            //agendaController.Insert("teste", "teste@teste", "11 5621-3231");
 
             if (agendaController.sucessInsert == true)
             {
-                MessageBox.Show("Inserido con sucesso");
+                MessageBox.Show("Cadastrado com sucesso", "Sucesso!",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(agendaController.messageError);
+                MessageBox.Show(agendaController.messageError, "Erro!",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
             }
-            
+
 
             #region
             //try
@@ -81,37 +86,65 @@ namespace CrudCsharpMysql.view
         {
             try
             {
-                conn = new MySqlConnection(ConnectDB.strConn);
-                string xQuerySelect = $"select * from openxcod.contatos where nome like '%{txtBuscar.Text}%' or email like '%{txtBuscar.Text}%' ";
+                AgendaController agendaController = new AgendaController();
+                MySqlDataReader reader = agendaController.Read(txtBuscar.Text);
 
-                MySqlCommand command = new MySqlCommand(xQuerySelect, conn);
-                conn.Open();
-                MySqlDataReader reader = command.ExecuteReader();
                 listviewContatos.Items.Clear();
-
                 while (reader.Read())
                 {
                     string[] row =
                     {
-                        reader.GetString(0),
-                        reader.GetString(1),
-                        reader.GetString(2),
-                        reader.GetString(3),
-                    };
+                    reader.GetString(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3),
+                };
                     var linha_listview = new ListViewItem(row);
                     listviewContatos.Items.Add(linha_listview);
                 }
-                conn.Close();
+                ConnectDB.closeConnection();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show($"{ex}");
+                throw;
             }
-            finally
-            {
-                conn.Close();
-            }
+
+            #region
+            //try
+            //{
+            //    conn = new MySqlConnection(ConnectDB.strConn);
+            //    string xQuerySelect = $"select * from openxcod.contatos where nome like '%{txtBuscar.Text}%' or email like '%{txtBuscar.Text}%' ";
+
+            //    MySqlCommand command = new MySqlCommand(xQuerySelect, conn);
+            //    conn.Open();
+            //    MySqlDataReader reader = command.ExecuteReader();
+            //    listviewContatos.Items.Clear();
+
+            //    while (reader.Read())
+            //    {
+            //        string[] row =
+            //        {
+            //            reader.GetString(0),
+            //            reader.GetString(1),
+            //            reader.GetString(2),
+            //            reader.GetString(3),
+            //        };
+            //        var linha_listview = new ListViewItem(row);
+            //        listviewContatos.Items.Add(linha_listview);
+            //    }
+            //    conn.Close();
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show($"{ex}");
+            //}
+            //finally
+            //{
+            //    conn.Close();
+            //}
+            #endregion
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CrudCsharpMysql.model
 {
-    class ConnectDB
+    static class ConnectDB
     {
 
         static private string server = "localhost";
@@ -14,13 +14,13 @@ namespace CrudCsharpMysql.model
         static private string pass = "Jelis@24";
         public static string strConn = $"server={server};user={user};database={banc};port=3306;password={pass}";
 
-        MySqlConnection conn = new MySqlConnection();
-        public void strConnection()
+        static MySqlConnection conn = new MySqlConnection();
+        public static void strConnection()
         {
             conn.ConnectionString = strConn;
         }
 
-        public void openConnection()
+        public static void openConnection()
         {
             if (conn.State == System.Data.ConnectionState.Closed)
             {
@@ -28,7 +28,7 @@ namespace CrudCsharpMysql.model
             }
         }
 
-        public void closeConnection()
+        public static void closeConnection()
         {
             if (conn.State == System.Data.ConnectionState.Open)
             {
