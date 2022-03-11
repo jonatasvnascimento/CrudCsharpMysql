@@ -9,8 +9,8 @@ namespace CrudCsharpMysql.model
 {
     public class loginCommand
     {
-        public bool haveLogin;
-        public string message;
+        public bool haveLogin = false;
+        public string message = "";
 
         public bool verifLogin(string login, string password)
         {

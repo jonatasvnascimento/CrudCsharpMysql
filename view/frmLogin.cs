@@ -23,10 +23,11 @@ namespace CrudCsharpMysql.view
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
-            controle.access(txtUsername.Text, txtPassword.Text);
+            //controle.access(txtUsername.Text, txtPassword.Text);
+            controle.access("admin", "123");
             if (controle.haveLogin)
             {
-                new frmAgenda().Show();
+                new frmPrincipal().Show();
                 this.Hide();
             }
             else
