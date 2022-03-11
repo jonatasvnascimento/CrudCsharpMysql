@@ -90,6 +90,13 @@ namespace CrudCsharpMysql.view
                 MySqlDataReader reader = agendaController.Read(txtBuscar.Text);
 
                 listviewContatos.Items.Clear();
+                if (!agendaController.messageError.Equals(""))
+                {
+                    MessageBox.Show(agendaController.messageError, "Error!",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+                    return;
+                }
                 while (reader.Read())
                 {
                     string[] row =
@@ -103,6 +110,8 @@ namespace CrudCsharpMysql.view
                     listviewContatos.Items.Add(linha_listview);
                 }
                 ConnectDB.closeConnection();
+
+               
             }
             catch (Exception)
             {

@@ -15,7 +15,6 @@ namespace CrudCsharpMysql.controller
         public bool sucessInsert, sucessUpdate, sucessDelete;
         public bool haveLogin;
         public string messageError = "";
-        internal SerializationInfo sucessRead;
 
         public bool Insert(string name, string email, string phone)
         {
@@ -38,6 +37,11 @@ namespace CrudCsharpMysql.controller
 
             AgendaCommand agendaCommand = new AgendaCommand();
             readersController = agendaCommand.Read(search);
+            if (!agendaCommand.messageError.Equals(""))
+            {
+                this.messageError = agendaCommand.messageError;
+            }
+
             return readersController;
             
         }
