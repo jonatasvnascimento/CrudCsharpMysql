@@ -1,4 +1,5 @@
-﻿using CrudCsharpMysql.model;
+﻿using CrudCsharpMysql.controller;
+using CrudCsharpMysql.model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -21,43 +22,57 @@ namespace CrudCsharpMysql.view
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool control = false;
-            try
+            Controle controle = new Controle();
+            controle.access(txtUsername.Text, txtPassword.Text);
+            if (controle.haveLogin)
             {
-                //txtUsername.Text = "admin";
-                //txtPassword.Text = "123";
-                MySqlConnection conn = new MySqlConnection(connectDB.strConn);
-
-                string xQuerySelect = $"SELECT * FROM openxcod.usuarios where login = '{txtUsername.Text}' and senha = '{txtPassword.Text}' ";
-                MySqlCommand command = new MySqlCommand(xQuerySelect, conn);
-                conn.Open();
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string user = reader.GetString(2);
-                    string pass = reader.GetString(3);
-                    control = true;
-                    if (txtUsername.Text == user && txtPassword.Text == pass)
-                    {
-                        new frmAgenda().Show();
-                        this.Hide();
-                        control = true;
-                    }
-
-                }
-                if (control == false)
-                {
-                    MessageBox.Show("Usuario ou senha invalidos!");
-                }
-                conn.Close();
-
+                new frmAgenda().Show();
+                this.Hide();
             }
-            catch (Exception ex)
+            else
             {
-
-                MessageBox.Show($"{ex}");
+                MessageBox.Show("Usuario ou senha invalidos!");
             }
+
+            #region
+            //bool control = false;
+            //try
+            //{
+            //    //txtUsername.Text = "admin";
+            //    //txtPassword.Text = "123";
+            //    MySqlConnection conn = new MySqlConnection(connectDB.strConn);
+
+            //    string xQuerySelect = $"SELECT * FROM openxcod.usuarios where login = '{txtUsername.Text}' and senha = '{txtPassword.Text}' ";
+            //    MySqlCommand command = new MySqlCommand(xQuerySelect, conn);
+            //    conn.Open();
+            //    MySqlDataReader reader = command.ExecuteReader();
+
+            //    while (reader.Read())
+            //    {
+            //        string user = reader.GetString(2);
+            //        string pass = reader.GetString(3);
+            //        control = true;
+            //        if (txtUsername.Text == user && txtPassword.Text == pass)
+            //        {
+            //            new frmAgenda().Show();
+            //            this.Hide();
+            //            control = true;
+            //        }
+
+            //    }
+            //    if (control == false)
+            //    {
+            //        MessageBox.Show("Usuario ou senha invalidos!");
+            //    }
+            //    conn.Close();
+
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show($"{ex}");
+            //}
+            #endregion
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)

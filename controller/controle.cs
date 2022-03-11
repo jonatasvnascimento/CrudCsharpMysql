@@ -17,10 +17,10 @@ namespace CrudCsharpMysql.controller
             loginCommand loginDB = new loginCommand();
             haveLogin = loginDB.verifLogin(login, password);
 
-            if (!loginDB.message.Equals(""))
-            {
-                this.message = loginDB.message;
-            }
+            //if (!loginDB.message.Equals(""))
+            //{
+            //    this.message = loginDB.message;
+            //}
 
             return haveLogin;
         }
