@@ -34,7 +34,46 @@ namespace CrudCsharpMysql.view
 
         private void ActiveButton(Button frmAtivo)
         {
-            foreach (Control ctrl in panelPrincipal.Controls) ctrl.ForeColor = Color.Red;
+            foreach (Control ctrl in panelPrincipal.Controls) ctrl.ForeColor = Color.White;
+            frmAtivo.ForeColor = Color.Black;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnHome);
+            ActiveFormClose();
+        }
+
+        private void btnAgenda_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnAgenda);
+            FromShow(new frmAgenda());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnUsuarios);
+            FromShow(new frmUsuarios());
+
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnProdutos);
+
+        }
+
+        private void btnConfiguracao_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnConfiguracao);
+
+        }
+
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnSair);
+
         }
     }
 }

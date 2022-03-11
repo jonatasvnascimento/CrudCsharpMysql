@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnConfiguracao = new System.Windows.Forms.Button();
+            this.btnProdutos = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnAgenda = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
@@ -37,8 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnProdutos = new System.Windows.Forms.Button();
-            this.btnConfiguracao = new System.Windows.Forms.Button();
             this.panelPrincipal.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelForm.SuspendLayout();
@@ -49,7 +49,7 @@
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.panelPrincipal.Controls.Add(this.btnConfiguracao);
             this.panelPrincipal.Controls.Add(this.btnProdutos);
-            this.panelPrincipal.Controls.Add(this.button3);
+            this.panelPrincipal.Controls.Add(this.btnSair);
             this.panelPrincipal.Controls.Add(this.btnUsuarios);
             this.panelPrincipal.Controls.Add(this.btnAgenda);
             this.panelPrincipal.Controls.Add(this.btnHome);
@@ -60,22 +60,59 @@
             this.panelPrincipal.Size = new System.Drawing.Size(200, 658);
             this.panelPrincipal.TabIndex = 0;
             // 
-            // button3
+            // btnConfiguracao
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 608);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 50);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Sair";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnConfiguracao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btnConfiguracao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfiguracao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConfiguracao.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnConfiguracao.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracao.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfiguracao.ForeColor = System.Drawing.Color.White;
+            this.btnConfiguracao.Location = new System.Drawing.Point(0, 294);
+            this.btnConfiguracao.Name = "btnConfiguracao";
+            this.btnConfiguracao.Size = new System.Drawing.Size(200, 50);
+            this.btnConfiguracao.TabIndex = 22;
+            this.btnConfiguracao.Text = "Configuração";
+            this.btnConfiguracao.UseVisualStyleBackColor = false;
+            this.btnConfiguracao.Click += new System.EventHandler(this.btnConfiguracao_Click);
+            // 
+            // btnProdutos
+            // 
+            this.btnProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btnProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProdutos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProdutos.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnProdutos.FlatAppearance.BorderSize = 0;
+            this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdutos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProdutos.ForeColor = System.Drawing.Color.White;
+            this.btnProdutos.Location = new System.Drawing.Point(0, 244);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(200, 50);
+            this.btnProdutos.TabIndex = 21;
+            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.UseVisualStyleBackColor = false;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(0, 608);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(200, 50);
+            this.btnSair.TabIndex = 20;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnUsuarios
             // 
@@ -93,6 +130,7 @@
             this.btnUsuarios.TabIndex = 19;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnAgenda
             // 
@@ -110,6 +148,7 @@
             this.btnAgenda.TabIndex = 18;
             this.btnAgenda.Text = "Agenda";
             this.btnAgenda.UseVisualStyleBackColor = false;
+            this.btnAgenda.Click += new System.EventHandler(this.btnAgenda_Click);
             // 
             // btnHome
             // 
@@ -126,6 +165,7 @@
             this.btnHome.TabIndex = 17;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelLogo
             // 
@@ -168,40 +208,6 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Home";
             // 
-            // btnProdutos
-            // 
-            this.btnProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.btnProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProdutos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProdutos.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnProdutos.FlatAppearance.BorderSize = 0;
-            this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdutos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProdutos.ForeColor = System.Drawing.Color.White;
-            this.btnProdutos.Location = new System.Drawing.Point(0, 244);
-            this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(200, 50);
-            this.btnProdutos.TabIndex = 21;
-            this.btnProdutos.Text = "Produtos";
-            this.btnProdutos.UseVisualStyleBackColor = false;
-            // 
-            // btnConfiguracao
-            // 
-            this.btnConfiguracao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.btnConfiguracao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfiguracao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfiguracao.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnConfiguracao.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracao.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfiguracao.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracao.Location = new System.Drawing.Point(0, 294);
-            this.btnConfiguracao.Name = "btnConfiguracao";
-            this.btnConfiguracao.Size = new System.Drawing.Size(200, 50);
-            this.btnConfiguracao.TabIndex = 22;
-            this.btnConfiguracao.Text = "Configuração";
-            this.btnConfiguracao.UseVisualStyleBackColor = false;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -230,7 +236,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnAgenda;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Label label2;
