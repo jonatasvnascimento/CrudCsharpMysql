@@ -29,3 +29,4 @@ C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmRegister.resources
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmPrincipal.resources
 C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.view.frmUsuarios.resources
+C:\Users\jnascimento3\Documents\GitHub\CrudCsharpMysql\obj\Debug\net5.0-windows\CrudCsharpMysql.Properties.Resources.resources

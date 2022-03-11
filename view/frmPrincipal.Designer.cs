@@ -36,11 +36,13 @@
             this.btnAgenda = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelForm = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelPrincipal.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             this.btnConfiguracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfiguracao.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnConfiguracao.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracao.Location = new System.Drawing.Point(0, 294);
+            this.btnConfiguracao.Location = new System.Drawing.Point(0, 310);
             this.btnConfiguracao.Name = "btnConfiguracao";
             this.btnConfiguracao.Size = new System.Drawing.Size(200, 50);
             this.btnConfiguracao.TabIndex = 22;
@@ -88,7 +90,7 @@
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProdutos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProdutos.ForeColor = System.Drawing.Color.White;
-            this.btnProdutos.Location = new System.Drawing.Point(0, 244);
+            this.btnProdutos.Location = new System.Drawing.Point(0, 260);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(200, 50);
             this.btnProdutos.TabIndex = 21;
@@ -124,7 +126,7 @@
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 194);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 210);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(200, 50);
             this.btnUsuarios.TabIndex = 19;
@@ -142,7 +144,7 @@
             this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgenda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgenda.ForeColor = System.Drawing.Color.White;
-            this.btnAgenda.Location = new System.Drawing.Point(0, 144);
+            this.btnAgenda.Location = new System.Drawing.Point(0, 160);
             this.btnAgenda.Name = "btnAgenda";
             this.btnAgenda.Size = new System.Drawing.Size(200, 50);
             this.btnAgenda.TabIndex = 18;
@@ -159,7 +161,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(0, 94);
+            this.btnHome.Location = new System.Drawing.Point(0, 110);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(200, 50);
             this.btnHome.TabIndex = 17;
@@ -169,44 +171,54 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.White;
+            this.panelLogo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 94);
+            this.panelLogo.Size = new System.Drawing.Size(200, 110);
             this.panelLogo.TabIndex = 0;
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label1.Location = new System.Drawing.Point(43, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "OpenTools";
+            this.pictureBox1.Image = global::CrudCsharpMysql.Properties.Resources._391_3911495_washer_and_dryer_clip_art;
+            this.pictureBox1.Location = new System.Drawing.Point(45, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(110, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // panelForm
             // 
-            this.panelForm.Controls.Add(this.label2);
+            this.panelForm.Controls.Add(this.label7);
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(200, 0);
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(1044, 658);
             this.panelForm.TabIndex = 1;
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label2.Location = new System.Drawing.Point(461, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 25);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Home";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.label7.Location = new System.Drawing.Point(459, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 32);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Home";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(52, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "UserName";
             // 
             // frmPrincipal
             // 
@@ -223,6 +235,7 @@
             this.panelPrincipal.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
             this.ResumeLayout(false);
@@ -233,14 +246,15 @@
 
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnAgenda;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Panel panelForm;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConfiguracao;
         private System.Windows.Forms.Button btnProdutos;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
     }
 }

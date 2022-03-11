@@ -73,6 +73,8 @@ namespace CrudCsharpMysql.view
         private void btnSair_Click(object sender, EventArgs e)
         {
             ActiveButton(btnSair);
+            ActiveFormClose();
+            Application.Exit(); 
 
         }
     }
