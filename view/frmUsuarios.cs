@@ -15,6 +15,8 @@ namespace CrudCsharpMysql.view
 {
     public partial class frmUsuarios : Form
     {
+        private List<Pessoa> pLista;
+
         public frmUsuarios()
         {
             InitializeComponent();
@@ -25,17 +27,35 @@ namespace CrudCsharpMysql.view
             listviewUsers.GridLines = true;
 
             listviewUsers.Columns.Add("ID", 30, HorizontalAlignment.Left);
-            listviewUsers.Columns.Add("Name", 200, HorizontalAlignment.Left);
-            listviewUsers.Columns.Add("Login", 100, HorizontalAlignment.Left);
+            listviewUsers.Columns.Add("Name", 150, HorizontalAlignment.Left);
+            listviewUsers.Columns.Add("Login", 70, HorizontalAlignment.Left);
             listviewUsers.Columns.Add("Pass", 100, HorizontalAlignment.Left);
-            listviewUsers.Columns.Add("Email", 200, HorizontalAlignment.Left);
-            listviewUsers.Columns.Add("Status", 100, HorizontalAlignment.Left);
+            listviewUsers.Columns.Add("Email", 150, HorizontalAlignment.Left);
+            listviewUsers.Columns.Add("Status", 50, HorizontalAlignment.Left);
             listviewUsers.Columns.Add("Access", 0, HorizontalAlignment.Left);
-            listviewUsers.Columns.Add("Deleted", 100, HorizontalAlignment.Left);
+            listviewUsers.Columns.Add("Deleted", 60, HorizontalAlignment.Left);
 
-            comboBox1.Items.Add("Ativo");
-            comboBox1.Items.Add("Inativo");
-            comboBox1.Items.Add("Bloqueado");
+            carregaLista();
+
+            var acesso = new DataGridViewCheckBoxColumn();
+            acesso.HeaderText = "C";
+            acesso.Width = 50;
+            acesso.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            acesso.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(acesso);
+
+            dataGridView1.DataSource = pLista;
+
+            //dataGridView1.Rows.Add();
+            //dataGridView1.Rows[0].Cells["Chave"].Value = "001";
+            //dataGridView1.Rows[0].Cells["Acesso"].Value = "Criação de Usuário";
+
+
+
+            comboBoxStatus.Items.Add("Ativo");
+            comboBoxStatus.Items.Add("Inativo");
+            comboBoxStatus.Items.Add("Bloqueado");
+
 
 
         }
@@ -88,7 +108,7 @@ namespace CrudCsharpMysql.view
             string login = txtLogin.Text;
             string password = txtPassword.Text;
             string email = txtEmail.Text;
-            string status = txtStatus.Text;
+            string status = Convert.ToString(comboBoxStatus.SelectedItem);
             string access = "";
             string deleted = "";
             userController.Insert(name, login, password, email, status, access, deleted);
@@ -105,6 +125,73 @@ namespace CrudCsharpMysql.view
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Information);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        class Pessoa
+        {
+            public Pessoa()
+            { }
+
+            public Pessoa(int _id, string _nome, short _idade, char _sexo)
+            {
+                this.p_id = _id;
+                this.p_nome = _nome;
+                this.p_idade = _idade;
+                this.p_sexo = _sexo;
+            }
+
+            private int p_id = -1;
+            private string p_nome = String.Empty;
+            private short p_idade = 0;
+            private char? p_sexo = null;
+
+            public int ID
+            {
+                get { return p_id; }
+                set { p_id = value; }
+            }
+
+            public string Nome
+            {
+                get { return p_nome; }
+                set { p_nome = value; }
+            }
+
+            public short Idade
+            {
+                get { return p_idade; }
+                set { p_idade = value; }
+            }
+
+            public char? Sexo
+            {
+                get { return p_sexo; }
+                set { p_sexo = value; }
+            }
+        }
+        private void carregaLista()
+        {
+            pLista = new List<Pessoa>();
+            pLista.Add(new Pessoa(1, "João", 29, 'M'));
+            pLista.Add(new Pessoa(2, "Macoratti", 35, 'F'));
+            pLista.Add(new Pessoa(3, "Americo", 25, 'M'));
+            pLista.Add(new Pessoa(4, "Katia", 21, 'F'));
+            pLista.Add(new Pessoa(5, "Lena", 33, 'F'));
+            pLista.Add(new Pessoa(6, "Suzana", 45, 'F'));
+            pLista.Add(new Pessoa(7, "Jim", 38, 'M'));
+            pLista.Add(new Pessoa(8, "Jane", 32, 'F'));
+            pLista.Add(new Pessoa(9, "Roberto", 31, 'M'));
+            pLista.Add(new Pessoa(10, "Cintia", 25, 'F'));
+            pLista.Add(new Pessoa(11, "Gina", 27, 'F'));
+            pLista.Add(new Pessoa(12, "Joel", 33, 'M'));
+            pLista.Add(new Pessoa(13, "Germano", 55, 'M'));
+            pLista.Add(new Pessoa(14, "Ricardo", 22, 'M'));
+            pLista.Add(new Pessoa(15, "Maria", 39, 'F'));
         }
     }
 }

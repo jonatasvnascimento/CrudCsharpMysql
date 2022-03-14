@@ -17,6 +17,22 @@ namespace CrudCsharpMysql.controller
         public bool Insert(string name, string login, string password, string email, string status, string access, string deleted)
         {
             UserCommand userCommand = new UserCommand();
+
+            switch (status)
+            {
+                case "Ativo":
+                    status = "A";
+                    break;
+                case "Inativo":
+                    status = "I";
+                    break;
+                case "bloqueado":
+                    status = "B";
+                    break;
+                default:
+                    break;
+            }
+
             userCommand.Save(name, login, password, email, status, access, deleted);
 
             if (!userCommand.messageError.Equals(""))
