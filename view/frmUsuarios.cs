@@ -15,6 +15,8 @@ namespace CrudCsharpMysql.view
 {
     public partial class frmUsuarios : Form
     {
+        private int b;
+
         public frmUsuarios()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace CrudCsharpMysql.view
             comboBoxStatus.Items.Add("Inativo");
             comboBoxStatus.Items.Add("Bloqueado");
 
-           
+
 
 
 
@@ -112,37 +114,86 @@ namespace CrudCsharpMysql.view
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void carregaLista()
         {
             //cria um objeto DataTable
             DataTable dt = new DataTable();
+
             //inclui duas colunas no datatable definindo o seu tipo como booleano e string
-            dt.Columns.Add("Estado", typeof(bool));
-            dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("Mark", typeof(bool));
+            dt.Columns.Add("Chave", typeof(string));
+            dt.Columns.Add("Descrição", typeof(string));
+
             //cria um array do tipo string com nomes
-            string[] nomes = { "Macoratti", "Jefferson", "Janice", "Jessica", "Miriam" };
+            string[] nomes = { "Criação de Usuarios", "Adição de Notas" };
+            string[] chaves = { "001", "002" };
+
             //define um array com valores booleanos
-            bool[] status = { true, true, false, false, false };
+            //bool[] status = { false, false, false, false, false };
             //inclui linhas e valores no datatable
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < nomes.Length; i++)
             {
                 DataRow dr = dt.NewRow();
-                dr["Estado"] = status[i];
-                dr["Nome"] = nomes[i];
+                //dr["Estado"] = status[i];
+                dr["Chave"] = chaves[i];
+                dr["Descrição"] = nomes[i];
                 dt.Rows.Add(dr);
             }
             //vincula os valores do datatable no DataGridView
             dataGridView1.DataSource = dt;
+
         }
+        private void LineSelectedChechBox()
+        {
+            
+            //percorre as linhas do controle DataGridView  
+            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            {
+                //List<int> codigos = new List<int>();
+                ////valos exibir a linha da[0](Cells[0]) pois ela representa a coluna checkbox
+                ////que foi selecionada
+                //if (dr.Cells[0].Value != null)
+                //{
+                //    codigos.Add(b);
+                //}
+                //foreach (var item in codigos)
+                //{
+                //    Console.WriteLine(item);
+                //}
+
+                List<int> codigos = new List<int>();
+
+                if (bool.Parse(dataGridView1.CurrentRow.Cells[0].FormattedValue.ToString()) == true)
+                {
+                    foreach (DataGridViewRow check in dataGridView1.Rows)
+                    {
+                        if ((bool)check.Cells[0].FormattedValue)
+                        {
+                            b = int.Parse(check.Cells[0].Value.ToString());
+                        }
+                    }
+                    codigos.Add(b);
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um item");
+                }
+                foreach (var item in codigos)
+                {
+                    Console.WriteLine(item);
+                }
+
+            }
+        }
+
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
+        }
 
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            LineSelectedChechBox();
         }
     }
 }
