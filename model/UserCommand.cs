@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CrudCsharpMysql.model
 {
-    internal class AgendaCommand
+    internal class UserCommand
     {
         public bool sucess = false;
         public string messageError = "";
@@ -15,17 +15,23 @@ namespace CrudCsharpMysql.model
         MySqlCommand cmd = new MySqlCommand();
         private MySqlDataReader readers;
 
-        public bool Save(string name, string email, string phone)
+        public bool Save(string name,string login, string password, string email, string status, string access, string deleted)
         {
             try
             {
                 conn.Open();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO contatos(nome, email, telefone) values(@name, @email, @phone) ";
+                cmd.CommandText = "INSERT INTO usuarios(nome, login, senha, email, status, access, deleted) values(@name, @login, @password, @email, @status, @access, @deleted) ";
 
                 cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@login", login);
+                cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@access", access);
+                cmd.Parameters.AddWithValue("@deleted", deleted);
+
+
                 cmd.Prepare();
 
                 cmd.ExecuteNonQuery();
@@ -41,7 +47,7 @@ namespace CrudCsharpMysql.model
             }
             finally
             {
-                conn.Close ();
+                conn.Close();
             }
 
             if (messageError.Equals(""))
@@ -63,14 +69,14 @@ namespace CrudCsharpMysql.model
             {
                 conn.Open();
                 cmd.Connection = conn;
-                cmd.CommandText = "select * from openxcod.contatos where nome like @search or email like @search ";
+                cmd.CommandText = "select * from openxcod.usuarios where nome like @search or login like @search or email like @search ";
                 cmd.Parameters.AddWithValue("@search", $"%{search}%");
                 cmd.Prepare();
 
                 cmd.ExecuteNonQuery();
                 MySqlDataReader reader = cmd.ExecuteReader();
                 readers = reader;
-             
+              
             }
             catch (MySqlException ex)
             {
@@ -80,8 +86,8 @@ namespace CrudCsharpMysql.model
             {
                 this.messageError = ex.Message;
             }
-            
-            
+
+
 
             if (messageError.Equals(""))
             {

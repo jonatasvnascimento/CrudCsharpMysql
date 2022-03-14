@@ -15,9 +15,6 @@ namespace CrudCsharpMysql.view
 {
     public partial class frmAgenda : Form
     {
-        MySqlConnection conn;
-
-
         public frmAgenda()
         {
             InitializeComponent();
@@ -110,8 +107,6 @@ namespace CrudCsharpMysql.view
                     listviewContatos.Items.Add(linha_listview);
                 }
                 ConnectDB.closeConnection();
-
-               
             }
             catch (Exception)
             {

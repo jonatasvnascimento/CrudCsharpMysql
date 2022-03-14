@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace CrudCsharpMysql.controller
 {
-    public class AgendaController
+    internal class AgendaController
     {
-        public MySqlDataReader readersController;
+        public MySqlDataReader agendaRead;
         public bool sucessInsert, sucessUpdate, sucessDelete;
-        public bool haveLogin;
         public string messageError = "";
 
         public bool Insert(string name, string email, string phone)
@@ -36,13 +35,13 @@ namespace CrudCsharpMysql.controller
         {
 
             AgendaCommand agendaCommand = new AgendaCommand();
-            readersController = agendaCommand.Read(search);
+            agendaRead = agendaCommand.Read(search);
             if (!agendaCommand.messageError.Equals(""))
             {
                 this.messageError = agendaCommand.messageError;
             }
 
-            return readersController;
+            return agendaRead;
             
         }
         public bool Update()

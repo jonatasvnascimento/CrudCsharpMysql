@@ -20,10 +20,11 @@ namespace CrudCsharpMysql.model
                 MySqlCommand cmd = new MySqlCommand();
                 conn.Open();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM openxcod.usuarios WHERE login = @login and senha = @password ";
+                cmd.CommandText = "SELECT * FROM openxcod.usuarios WHERE login = @login and senha = @password and status = @status  and deleted <> '*' ";
 
                 cmd.Parameters.AddWithValue("@login", login);
                 cmd.Parameters.AddWithValue("@password",password);
+                cmd.Parameters.AddWithValue("@status", "A");
                 cmd.Prepare();
 
                 cmd.ExecuteNonQuery();
