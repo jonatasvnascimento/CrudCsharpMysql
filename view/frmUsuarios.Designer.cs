@@ -46,8 +46,6 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
-            this.Chave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Acesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,16 +226,10 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Chave,
-            this.Acesso});
             this.dataGridView1.Location = new System.Drawing.Point(743, 89);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(289, 409);
             this.dataGridView1.TabIndex = 43;
@@ -253,20 +245,6 @@
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(157, 23);
             this.comboBoxStatus.TabIndex = 44;
-            // 
-            // Chave
-            // 
-            this.Chave.HeaderText = "Chave";
-            this.Chave.Name = "Chave";
-            this.Chave.ReadOnly = true;
-            this.Chave.Width = 50;
-            // 
-            // Acesso
-            // 
-            this.Acesso.HeaderText = "Acesso";
-            this.Acesso.Name = "Acesso";
-            this.Acesso.ReadOnly = true;
-            this.Acesso.Width = 175;
             // 
             // frmUsuarios
             // 
@@ -295,6 +273,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
+            this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,7 +300,5 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBoxStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Chave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Acesso;
     }
 }
