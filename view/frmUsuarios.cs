@@ -40,7 +40,6 @@ namespace CrudCsharpMysql.view
             comboBoxStatus.Items.Add("Bloqueado");
             carregaLista();
 
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -109,13 +108,23 @@ namespace CrudCsharpMysql.view
                                  MessageBoxIcon.Information);
             }
         }
+        private void LineSelectedChechBox()
+        {
+            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            {
+                bool cheked;
+                bool.TryParse(dr.Cells[0].Value?.ToString() ,out cheked);
+                if (cheked)
+                {
+                    MessageBox.Show("Linha " + dr.Index + " foi selecionada");
+                }
+            }
+        }
 
         private void carregaLista()
         {
-            //cria um objeto DataTable
             DataTable dt = new DataTable();
 
-            //inclui duas colunas no datatable definindo o seu tipo como booleano e string
             dt.Columns.Add("Mark", typeof(bool));
             dt.Columns.Add("Chave", typeof(string));
             dt.Columns.Add("Descrição", typeof(string));
@@ -124,9 +133,7 @@ namespace CrudCsharpMysql.view
             string[] nomes = { "Criação de Usuarios", "Adição de Notas" };
             string[] chaves = { "001", "002" };
 
-            //define um array com valores booleanos
             //bool[] status = { false, false, false, false, false };
-            //inclui linhas e valores no datatable
             for (int i = 0; i < nomes.Length; i++)
             {
                 DataRow dr = dt.NewRow();
@@ -135,83 +142,25 @@ namespace CrudCsharpMysql.view
                 dr["Descrição"] = nomes[i];
                 dt.Rows.Add(dr);
             }
-            //vincula os valores do datatable no DataGridView
             dataGridView1.DataSource = dt;
 
         }
-        private void LineSelectedChechBox()
-        {
-            
-            //percorre as linhas do controle DataGridView  
-            foreach (DataGridViewRow dr in dataGridView1.Rows)
-            {
-                List<int> codigos = new List<int>();
-
-                if (bool.Parse(dataGridView1.CurrentRow.Cells[0].FormattedValue.ToString()) == true)
-                {
-                    foreach (DataGridViewRow check in dataGridView1.Rows)
-                    {
-                        if ((bool)check.Cells[0].FormattedValue)
-                        {
-                            b = int.Parse(check.Cells[0].Value.ToString());
-                        }
-                    }
-                    codigos.Add(b);
-                }
-                else
-                {
-                }
-                foreach (var item in codigos)
-                {
-                    Console.WriteLine(item);
-                }
-
-            }
-        }
-        private DataTable fonteDadosDataTable()
-        {
-            DataTable dt = new DataTable("macorattiDataTable");
-
-            //Cria colunas no DataTable;
-
-            //cria a coluna id e inclua no datatable
-            DataColumn id = new DataColumn("id");
-            dt.Columns.Add(id);
-            //cria a coluna nome e inclui no datatable
-            DataColumn nome = new DataColumn("nome");
-            dt.Columns.Add(nome); //LastName column created and add to DataTable
-
-            //Inclui alguns dados no DataTable
-            DataRow dr;
-            for (int contador = 0; contador <= 9; contador++)
-            {
-                dr = dt.NewRow();
-                dr["id"] = contador;
-                dr["nome"] = "Macoratti " + contador;
-                dt.Rows.Add(dr);
-            }
-
-            return dt;
-        }
-
+       
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            LineSelectedChechBox();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow dr in dataGridView1.Rows)
-            {
-                //valos exibir a linha da [0](Cells[0]) pois ela representa a coluna checkbox 
-                //que foi selecionada
-                bool selecionado = false;
-                bool.TryParse(dr.Cells[0].Value?.ToString(), out selecionado);
-                if (selecionado)
-                {
-                    MessageBox.Show("Linha " + dr.Index + " foi selecionada");
-                }
-            }
+            txtBuscar.Text = "";
+            txtEmail.Text = "";
+            txtLogin.Text = "";
+            txtName.Text = "";
+            txtPassword.Text = "";
+        }
+
+        private void dataGridView1_EnabledChanged(object sender, EventArgs e)
+        {
         }
     }
 }

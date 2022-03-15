@@ -36,7 +36,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDescriFrom = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -144,16 +144,16 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Nome";
             // 
-            // label7
+            // lblDescriFrom
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label7.Location = new System.Drawing.Point(367, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(340, 32);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Manutenção de Usuarios";
+            this.lblDescriFrom.AutoSize = true;
+            this.lblDescriFrom.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDescriFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.lblDescriFrom.Location = new System.Drawing.Point(367, 9);
+            this.lblDescriFrom.Name = "lblDescriFrom";
+            this.lblDescriFrom.Size = new System.Drawing.Size(340, 32);
+            this.lblDescriFrom.TabIndex = 29;
+            this.lblDescriFrom.Text = "Manutenção de Usuarios";
             // 
             // label3
             // 
@@ -234,6 +234,7 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(289, 409);
             this.dataGridView1.TabIndex = 43;
+            this.dataGridView1.EnabledChanged += new System.EventHandler(this.dataGridView1_EnabledChanged);
             // 
             // comboBoxStatus
             // 
@@ -269,7 +270,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblDescriFrom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
@@ -290,7 +291,7 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDescriFrom;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
