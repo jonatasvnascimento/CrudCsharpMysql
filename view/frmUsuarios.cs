@@ -118,7 +118,7 @@ namespace CrudCsharpMysql.view
                 if (cheked)
                 {
 
-                    accessKey += "-"+ dr.Cells["Chave"].Value.ToString());
+                    accessKey += "-"+ dr.Cells["Chave"].Value.ToString();
                 }
             }
         }
