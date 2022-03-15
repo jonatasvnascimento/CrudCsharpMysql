@@ -35,14 +35,10 @@ namespace CrudCsharpMysql.view
             listviewUsers.Columns.Add("Access", 0, HorizontalAlignment.Left);
             listviewUsers.Columns.Add("Deleted", 60, HorizontalAlignment.Left);
 
-            carregaLista();
-
             comboBoxStatus.Items.Add("Ativo");
             comboBoxStatus.Items.Add("Inativo");
             comboBoxStatus.Items.Add("Bloqueado");
-
-
-
+            carregaLista();
 
 
         }
@@ -149,18 +145,6 @@ namespace CrudCsharpMysql.view
             //percorre as linhas do controle DataGridView  
             foreach (DataGridViewRow dr in dataGridView1.Rows)
             {
-                //List<int> codigos = new List<int>();
-                ////valos exibir a linha da[0](Cells[0]) pois ela representa a coluna checkbox
-                ////que foi selecionada
-                //if (dr.Cells[0].Value != null)
-                //{
-                //    codigos.Add(b);
-                //}
-                //foreach (var item in codigos)
-                //{
-                //    Console.WriteLine(item);
-                //}
-
                 List<int> codigos = new List<int>();
 
                 if (bool.Parse(dataGridView1.CurrentRow.Cells[0].FormattedValue.ToString()) == true)
@@ -176,7 +160,6 @@ namespace CrudCsharpMysql.view
                 }
                 else
                 {
-                    MessageBox.Show("Selecione um item");
                 }
                 foreach (var item in codigos)
                 {
@@ -185,15 +168,50 @@ namespace CrudCsharpMysql.view
 
             }
         }
+        private DataTable fonteDadosDataTable()
+        {
+            DataTable dt = new DataTable("macorattiDataTable");
 
+            //Cria colunas no DataTable;
+
+            //cria a coluna id e inclua no datatable
+            DataColumn id = new DataColumn("id");
+            dt.Columns.Add(id);
+            //cria a coluna nome e inclui no datatable
+            DataColumn nome = new DataColumn("nome");
+            dt.Columns.Add(nome); //LastName column created and add to DataTable
+
+            //Inclui alguns dados no DataTable
+            DataRow dr;
+            for (int contador = 0; contador <= 9; contador++)
+            {
+                dr = dt.NewRow();
+                dr["id"] = contador;
+                dr["nome"] = "Macoratti " + contador;
+                dt.Rows.Add(dr);
+            }
+
+            return dt;
+        }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
+            LineSelectedChechBox();
         }
 
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void btnLimpar_Click(object sender, EventArgs e)
         {
-            LineSelectedChechBox();
+            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            {
+                //valos exibir a linha da [0](Cells[0]) pois ela representa a coluna checkbox 
+                //que foi selecionada
+                bool selecionado = false;
+                bool.TryParse(dr.Cells[0].Value?.ToString(), out selecionado);
+                if (selecionado)
+                {
+                    MessageBox.Show("Linha " + dr.Index + " foi selecionada");
+                }
+            }
         }
     }
 }
