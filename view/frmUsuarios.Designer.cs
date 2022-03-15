@@ -234,7 +234,6 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(289, 409);
             this.dataGridView1.TabIndex = 43;
-            this.dataGridView1.EnabledChanged += new System.EventHandler(this.dataGridView1_EnabledChanged);
             // 
             // comboBoxStatus
             // 

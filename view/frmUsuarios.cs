@@ -16,6 +16,7 @@ namespace CrudCsharpMysql.view
     public partial class frmUsuarios : Form
     {
         private int b;
+        public string accessKey;
 
         public frmUsuarios()
         {
@@ -116,7 +117,8 @@ namespace CrudCsharpMysql.view
                 bool.TryParse(dr.Cells[0].Value?.ToString() ,out cheked);
                 if (cheked)
                 {
-                    MessageBox.Show("Linha " + dr.Index + " foi selecionada");
+
+                    accessKey += "-"+ dr.Cells["Chave"].Value.ToString());
                 }
             }
         }
@@ -157,10 +159,7 @@ namespace CrudCsharpMysql.view
             txtLogin.Text = "";
             txtName.Text = "";
             txtPassword.Text = "";
-        }
-
-        private void dataGridView1_EnabledChanged(object sender, EventArgs e)
-        {
+            LineSelectedChechBox();
         }
     }
 }
