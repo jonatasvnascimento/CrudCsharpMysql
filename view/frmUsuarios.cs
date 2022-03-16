@@ -15,9 +15,10 @@ namespace CrudCsharpMysql.view
 {
     public partial class frmUsuarios : Form
     {
-        private int b;
-        public string accessKey;
-
+        private readonly int b;
+        public string aux = "";
+        readonly List<string> ContainsAccessKey = new();
+        readonly List<string> NotContainsAccessKey = new();
         public frmUsuarios()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace CrudCsharpMysql.view
         {
             try
             {
-                UserController userController = new UserController();
+                UserController userController = new();
                 MySqlDataReader reader = userController.Read(txtBuscar.Text);
 
                 listviewUsers.Items.Clear();
@@ -86,7 +87,7 @@ namespace CrudCsharpMysql.view
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            UserController userController = new UserController();
+            UserController userController = new();
             string name = txtName.Text;
             string login = txtLogin.Text;
             string password = txtPassword.Text;
@@ -114,18 +115,38 @@ namespace CrudCsharpMysql.view
             foreach (DataGridViewRow dr in dataGridView1.Rows)
             {
                 bool cheked;
-                bool.TryParse(dr.Cells[0].Value?.ToString() ,out cheked);
+                bool.TryParse(dr.Cells[0].Value?.ToString(), out cheked);
                 if (cheked)
                 {
+                    if (!ContainsAccessKey.Contains("-" + dr.Cells["Chave"].Value.ToString()))
+                    {
+                        aux = "-" + dr.Cells["Chave"].Value.ToString();
+                        ContainsAccessKey.Add(aux);
+                        for (int i = 0; i < ContainsAccessKey.Count(); i++)
+                        {
+                            MessageBox.Show($"Contens: {ContainsAccessKey[i]}");
+                        }
+                    }
 
-                    accessKey += "-"+ dr.Cells["Chave"].Value.ToString();
+                }
+                if (cheked == false)
+                {
+                    NotContainsAccessKey.Add(dr.Cells["Chave"].Value?.ToString());
+                    foreach (var item in NotContainsAccessKey)
+                    {
+                        if (NotContainsAccessKey.Contains(item))
+                        {
+                            
+                        }
+                    }
                 }
             }
+
         }
 
         private void carregaLista()
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new();
 
             dt.Columns.Add("Mark", typeof(bool));
             dt.Columns.Add("Chave", typeof(string));
@@ -147,7 +168,7 @@ namespace CrudCsharpMysql.view
             dataGridView1.DataSource = dt;
 
         }
-       
+
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
         }
@@ -160,6 +181,8 @@ namespace CrudCsharpMysql.view
             txtName.Text = "";
             txtPassword.Text = "";
             LineSelectedChechBox();
+           
+
         }
     }
 }

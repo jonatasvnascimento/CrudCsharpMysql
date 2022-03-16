@@ -16,7 +16,7 @@ namespace CrudCsharpMysql.controller
 
         public bool Insert(string name, string login, string password, string email, string status, string access, string deleted)
         {
-            UserCommand userCommand = new UserCommand();
+            UserCommand userCommand = new();
 
             switch (status)
             {
@@ -49,7 +49,7 @@ namespace CrudCsharpMysql.controller
         public MySqlDataReader Read(string search)
         {
 
-            UserCommand userCommand = new UserCommand();
+            UserCommand userCommand = new();
             usersRead = userCommand.Read(search);
             if (!userCommand.messageError.Equals(""))
             {
