@@ -17,8 +17,9 @@ namespace CrudCsharpMysql.view
     {
         private readonly int b;
         public string aux = "";
-        readonly List<string> ContainsAccessKey = new();
-        readonly List<string> NotContainsAccessKey = new();
+        List<string> ContainsAccessKey = new();
+        List<string> NotContainsAccessKey = new();
+        private int ?IdContatoSelecionado = null;
         public frmUsuarios()
         {
             InitializeComponent();
@@ -109,6 +110,12 @@ namespace CrudCsharpMysql.view
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Information);
             }
+
+            txtBuscar.Text = "";
+            txtEmail.Text = "";
+            txtLogin.Text = "";
+            txtName.Text = "";
+            txtPassword.Text = "";
         }
         private void LineSelectedChechBox()
         {
@@ -134,11 +141,13 @@ namespace CrudCsharpMysql.view
                     NotContainsAccessKey.Add(dr.Cells["Chave"].Value?.ToString());
                     foreach (var item in NotContainsAccessKey)
                     {
-                        if (NotContainsAccessKey.Contains(item))
+                        if (ContainsAccessKey.Contains(item))
                         {
-                            
+                            ContainsAccessKey.Remove(item);
                         }
+                       
                     }
+
                 }
             }
 
@@ -180,9 +189,36 @@ namespace CrudCsharpMysql.view
             txtLogin.Text = "";
             txtName.Text = "";
             txtPassword.Text = "";
-            LineSelectedChechBox();
-           
+        }
 
+        private void listviewUsers_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            ListView.SelectedListViewItemCollection itens_selecionados = listviewUsers.SelectedItems;
+
+            foreach (ListViewItem item in itens_selecionados)
+            {
+                IdContatoSelecionado = Convert.ToInt32(item.SubItems[0].Text);
+                txtLogin.Text = item.SubItems[1].Text;
+                txtName.Text = item.SubItems[2].Text;
+                txtPassword.Text = item.SubItems[3].Text;
+                txtEmail.Text = item.SubItems[4].Text;
+                switch (item.SubItems[5].Text)
+                {
+                    case "A":
+                        comboBoxStatus.Text = "Ativo";
+                        break;
+                    case "I":
+                        comboBoxStatus.Text = "Inativo";
+                        break;
+                    case "B":
+                        comboBoxStatus.Text = "Bloqueado";
+                        break;
+                    default:
+                        comboBoxStatus.Text = "";
+                        break;
+                }
+
+            }
         }
     }
 }

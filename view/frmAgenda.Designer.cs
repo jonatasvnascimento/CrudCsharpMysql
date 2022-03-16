@@ -171,6 +171,7 @@
             this.listviewContatos.Size = new System.Drawing.Size(676, 528);
             this.listviewContatos.TabIndex = 25;
             this.listviewContatos.UseCompatibleStateImageBehavior = false;
+            this.listviewContatos.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listviewContatos_ItemSelectionChanged);
             // 
             // txtBuscar
             // 

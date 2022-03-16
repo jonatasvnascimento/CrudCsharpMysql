@@ -150,5 +150,17 @@ namespace CrudCsharpMysql.view
             //}
             #endregion
         }
+
+        private void listviewContatos_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            ListView.SelectedListViewItemCollection itens_selecionados = listviewContatos.SelectedItems;
+
+            foreach (ListViewItem item in itens_selecionados)
+            {
+                txtNome.Text = item.SubItems[1].Text;
+                txtTelefone.Text = item.SubItems[2].Text;
+                txtEmail.Text = item.SubItems[3].Text;
+            }
+        }
     }
 }

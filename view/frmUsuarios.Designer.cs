@@ -94,6 +94,7 @@
             this.listviewUsers.Size = new System.Drawing.Size(725, 377);
             this.listviewUsers.TabIndex = 39;
             this.listviewUsers.UseCompatibleStateImageBehavior = false;
+            this.listviewUsers.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listviewUsers_ItemSelectionChanged);
             // 
             // btnLimpar
             // 
@@ -240,10 +241,11 @@
             this.comboBoxStatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.comboBoxStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxStatus.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Location = new System.Drawing.Point(13, 616);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(157, 23);
+            this.comboBoxStatus.Size = new System.Drawing.Size(157, 30);
             this.comboBoxStatus.TabIndex = 44;
             // 
             // frmUsuarios

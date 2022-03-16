@@ -36,7 +36,7 @@
             this.btnAgenda = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserLogin = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelForm = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -172,7 +172,7 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.lblUserLogin);
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -180,15 +180,15 @@
             this.panelLogo.Size = new System.Drawing.Size(200, 110);
             this.panelLogo.TabIndex = 0;
             // 
-            // label1
+            // lblUserLogin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(52, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "UserName";
+            this.lblUserLogin.AutoSize = true;
+            this.lblUserLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUserLogin.Location = new System.Drawing.Point(52, 79);
+            this.lblUserLogin.Name = "lblUserLogin";
+            this.lblUserLogin.Size = new System.Drawing.Size(90, 21);
+            this.lblUserLogin.TabIndex = 11;
+            this.lblUserLogin.Text = "UserName";
             // 
             // pictureBox1
             // 
@@ -255,6 +255,6 @@
         private System.Windows.Forms.Button btnProdutos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserLogin;
     }
 }
