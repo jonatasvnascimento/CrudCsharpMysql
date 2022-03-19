@@ -77,5 +77,13 @@ namespace CrudCsharpMysql.view
             Application.Exit(); 
 
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnLogout);
+            ActiveFormClose();
+            new frmLogin().Show();
+            this.Hide();
+        }
     }
 }
