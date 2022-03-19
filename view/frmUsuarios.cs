@@ -19,7 +19,7 @@ namespace CrudCsharpMysql.view
         public string aux = "";
         List<string> ContainsAccessKey = new();
         List<string> NotContainsAccessKey = new();
-        private int ?IdContatoSelecionado = null;
+        private int? IdContatoSelecionado = null;
         public frmUsuarios()
         {
             InitializeComponent();
@@ -42,10 +42,11 @@ namespace CrudCsharpMysql.view
             comboBoxStatus.Items.Add("Inativo");
             comboBoxStatus.Items.Add("Bloqueado");
             carregaLista();
+            CarregarDados();
 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        public void CarregarDados()
         {
             try
             {
@@ -85,6 +86,10 @@ namespace CrudCsharpMysql.view
                 throw;
             }
         }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CarregarDados();
+        }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -110,9 +115,15 @@ namespace CrudCsharpMysql.view
             }
             userController.Insert(name, login, password, email, status, access, deleted, id);
 
-            if (userController.sucessInsert == true)
+            if (userController.sucessInsert == true && id == 0)
             {
                 MessageBox.Show("Cadastrado com sucesso", "Sucesso!",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
+            }
+            else if (userController.sucessInsert == true && id != 0)
+            {
+                MessageBox.Show("Atualizado com sucesso", "Sucesso!",
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Information);
             }
@@ -128,6 +139,8 @@ namespace CrudCsharpMysql.view
             txtLogin.Text = "";
             txtName.Text = "";
             txtPassword.Text = "";
+            comboBoxStatus.SelectedItem = null;
+            CarregarDados();
         }
         private void LineSelectedChechBox()
         {
@@ -157,7 +170,7 @@ namespace CrudCsharpMysql.view
                         {
                             ContainsAccessKey.Remove(item);
                         }
-                       
+
                     }
 
                 }
@@ -210,8 +223,8 @@ namespace CrudCsharpMysql.view
             foreach (ListViewItem item in itens_selecionados)
             {
                 IdContatoSelecionado = Convert.ToInt32(item.SubItems[0].Text);
-                txtLogin.Text = item.SubItems[1].Text;
-                txtName.Text = item.SubItems[2].Text;
+                txtName.Text = item.SubItems[1].Text;
+                txtLogin.Text = item.SubItems[2].Text;
                 txtPassword.Text = item.SubItems[3].Text;
                 txtEmail.Text = item.SubItems[4].Text;
                 switch (item.SubItems[5].Text)

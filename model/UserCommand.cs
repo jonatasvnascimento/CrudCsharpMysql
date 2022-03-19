@@ -28,7 +28,7 @@ namespace CrudCsharpMysql.model
                 }
                 else
                 {
-                    cmd.CommandText = "update usuarios set nome = @name, login = @login, senha = @password, email = @email, status = @status, access = @access, deleted = @deleted where id = @id ";
+                    cmd.CommandText = "UPDATE usuarios SET nome = @name, login = @login, senha = @password, email = @email, status = @status, access = @access, deleted = @deleted where id = @id ";
                 }
 
                 cmd.Parameters.AddWithValue("@name", name);

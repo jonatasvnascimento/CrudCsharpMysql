@@ -54,7 +54,6 @@ namespace CrudCsharpMysql.view
         {
             ActiveButton(btnUsuarios);
             FromShow(new frmUsuarios());
-
         }
 
         private void btnProdutos_Click(object sender, EventArgs e)
