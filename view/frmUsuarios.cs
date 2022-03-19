@@ -96,7 +96,7 @@ namespace CrudCsharpMysql.view
                 return;
             }
             UserController userController = new();
-            string name = txtName.Text;ss
+            string name = txtName.Text;
             string login = txtLogin.Text;
             string password = txtPassword.Text;
             string email = txtEmail.Text;
