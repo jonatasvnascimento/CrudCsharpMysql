@@ -37,6 +37,13 @@ namespace CrudCsharpMysql.view
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtNome.Text == "" && txtEmail.Text == "" && txtTelefone.Text == "")
+            {
+                MessageBox.Show("Campo devem ser preenchidos!!!", "Alerta!",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
+                return;
+            }
             AgendaController agendaController = new AgendaController();
             agendaController.Insert(txtNome.Text, txtEmail.Text, txtTelefone.Text);
             //agendaController.Insert("teste", "teste@teste", "11 5621-3231");

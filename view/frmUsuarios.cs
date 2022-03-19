@@ -88,15 +88,27 @@ namespace CrudCsharpMysql.view
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtName.Text == "" && txtLogin.Text == "" && txtPassword.Text == "" && txtEmail.Text == "" && comboBoxStatus.SelectedItem == null)
+            {
+                MessageBox.Show("Campos devem ser preenchidos", "Alerta!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                return;
+            }
             UserController userController = new();
-            string name = txtName.Text;
+            string name = txtName.Text;ss
             string login = txtLogin.Text;
             string password = txtPassword.Text;
             string email = txtEmail.Text;
             string status = Convert.ToString(comboBoxStatus.SelectedItem);
             string access = "";
             string deleted = "";
-            userController.Insert(name, login, password, email, status, access, deleted);
+            int id = 0;
+            if (IdContatoSelecionado != null)
+            {
+                id = (int)IdContatoSelecionado;
+            }
+            userController.Insert(name, login, password, email, status, access, deleted, id);
 
             if (userController.sucessInsert == true)
             {

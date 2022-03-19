@@ -90,6 +90,7 @@
             this.listviewUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.listviewUsers.HideSelection = false;
             this.listviewUsers.Location = new System.Drawing.Point(12, 121);
+            this.listviewUsers.MultiSelect = false;
             this.listviewUsers.Name = "listviewUsers";
             this.listviewUsers.Size = new System.Drawing.Size(725, 377);
             this.listviewUsers.TabIndex = 39;

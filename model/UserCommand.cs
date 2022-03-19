@@ -15,13 +15,21 @@ namespace CrudCsharpMysql.model
         MySqlCommand cmd = new MySqlCommand();
         private MySqlDataReader readers;
 
-        public bool Save(string name,string login, string password, string email, string status, string access, string deleted)
+        public bool Save(string name, string login, string password, string email, string status, string access, string deleted, int id)
         {
             try
             {
                 conn.Open();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO usuarios(nome, login, senha, email, status, access, deleted) values(@name, @login, @password, @email, @status, @access, @deleted) ";
+
+                if (id == 0)
+                {
+                    cmd.CommandText = "INSERT INTO usuarios(nome, login, senha, email, status, access, deleted) values(@name, @login, @password, @email, @status, @access, @deleted) ";
+                }
+                else
+                {
+                    cmd.CommandText = "update usuarios set nome = @name, login = @login, senha = @password, email = @email, status = @status, access = @access, deleted = @deleted where id = @id ";
+                }
 
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@login", login);
@@ -30,6 +38,7 @@ namespace CrudCsharpMysql.model
                 cmd.Parameters.AddWithValue("@status", status);
                 cmd.Parameters.AddWithValue("@access", access);
                 cmd.Parameters.AddWithValue("@deleted", deleted);
+                cmd.Parameters.AddWithValue("@id", id);
 
 
                 cmd.Prepare();
@@ -76,7 +85,7 @@ namespace CrudCsharpMysql.model
                 cmd.ExecuteNonQuery();
                 MySqlDataReader reader = cmd.ExecuteReader();
                 readers = reader;
-              
+
             }
             catch (MySqlException ex)
             {

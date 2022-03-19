@@ -167,6 +167,7 @@
             this.listviewContatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.listviewContatos.HideSelection = false;
             this.listviewContatos.Location = new System.Drawing.Point(356, 123);
+            this.listviewContatos.MultiSelect = false;
             this.listviewContatos.Name = "listviewContatos";
             this.listviewContatos.Size = new System.Drawing.Size(676, 528);
             this.listviewContatos.TabIndex = 25;

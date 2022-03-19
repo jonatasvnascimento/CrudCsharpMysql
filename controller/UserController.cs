@@ -14,7 +14,7 @@ namespace CrudCsharpMysql.controller
         public bool sucessInsert, sucessUpdate, sucessDelete;
         private MySqlDataReader usersRead;
 
-        public bool Insert(string name, string login, string password, string email, string status, string access, string deleted)
+        public bool Insert(string name, string login, string password, string email, string status, string access, string deleted, int id)
         {
             UserCommand userCommand = new();
 
@@ -33,7 +33,7 @@ namespace CrudCsharpMysql.controller
                     break;
             }
 
-            userCommand.Save(name, login, password, email, status, access, deleted);
+            userCommand.Save(name, login, password, email, status, access, deleted, id);
 
             if (!userCommand.messageError.Equals(""))
             {
