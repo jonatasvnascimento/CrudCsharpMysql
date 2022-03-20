@@ -55,6 +55,45 @@ namespace CrudCsharpMysql.model
 
             return sucess;
         }
+        public bool Delete(int id)
+        {
+            try
+            {
+                conn.Open();
+
+                cmd.Connection = conn;
+                cmd.CommandText = "update contatos set deleted = '*' where id = @id";
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+                this.messageError = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                this.messageError = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            if (messageError.Equals(""))
+            {
+                sucess = true;
+            }
+            else
+            {
+                sucess = false;
+            }
+            return sucess;
+        }
         public MySqlDataReader Read(string search)
         {
             string[] searchRows = { };

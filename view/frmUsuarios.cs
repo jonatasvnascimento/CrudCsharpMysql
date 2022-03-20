@@ -35,8 +35,6 @@ namespace CrudCsharpMysql.view
             listviewUsers.Columns.Add("Pass", 100, HorizontalAlignment.Left);
             listviewUsers.Columns.Add("Email", 150, HorizontalAlignment.Left);
             listviewUsers.Columns.Add("Status", 50, HorizontalAlignment.Left);
-            listviewUsers.Columns.Add("Access", 0, HorizontalAlignment.Left);
-            listviewUsers.Columns.Add("Deleted", 60, HorizontalAlignment.Left);
 
             comboBoxStatus.Items.Add("Ativo");
             comboBoxStatus.Items.Add("Inativo");
@@ -244,6 +242,13 @@ namespace CrudCsharpMysql.view
                 }
 
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            UserController userController = new();
+            userController.Delete((int)IdContatoSelecionado);
+            CarregarDados();
         }
     }
 }

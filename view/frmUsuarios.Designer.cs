@@ -46,6 +46,7 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(608, 89);
+            this.btnBuscar.Location = new System.Drawing.Point(467, 89);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(129, 26);
             this.btnBuscar.TabIndex = 42;
@@ -81,7 +82,7 @@
             this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBuscar.Location = new System.Drawing.Point(12, 89);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(590, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(449, 26);
             this.txtBuscar.TabIndex = 40;
             // 
             // listviewUsers
@@ -92,7 +93,7 @@
             this.listviewUsers.Location = new System.Drawing.Point(12, 121);
             this.listviewUsers.MultiSelect = false;
             this.listviewUsers.Name = "listviewUsers";
-            this.listviewUsers.Size = new System.Drawing.Size(725, 377);
+            this.listviewUsers.Size = new System.Drawing.Size(584, 377);
             this.listviewUsers.TabIndex = 39;
             this.listviewUsers.UseCompatibleStateImageBehavior = false;
             this.listviewUsers.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listviewUsers_ItemSelectionChanged);
@@ -103,7 +104,7 @@
             this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.btnLimpar.Location = new System.Drawing.Point(736, 611);
+            this.btnLimpar.Location = new System.Drawing.Point(582, 611);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(145, 35);
             this.btnLimpar.TabIndex = 36;
@@ -118,7 +119,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(887, 611);
+            this.btnSalvar.Location = new System.Drawing.Point(884, 611);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(145, 35);
             this.btnSalvar.TabIndex = 37;
@@ -231,10 +232,10 @@
             // 
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(743, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(602, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(289, 409);
+            this.dataGridView1.Size = new System.Drawing.Size(427, 409);
             this.dataGridView1.TabIndex = 43;
             // 
             // comboBoxStatus
@@ -249,12 +250,28 @@
             this.comboBoxStatus.Size = new System.Drawing.Size(157, 30);
             this.comboBoxStatus.TabIndex = 44;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(733, 611);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(145, 35);
+            this.btnDelete.TabIndex = 45;
+            this.btnDelete.Text = "DELETAR";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1044, 658);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBuscar);
@@ -303,5 +320,6 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

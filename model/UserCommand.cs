@@ -70,6 +70,45 @@ namespace CrudCsharpMysql.model
 
             return sucess;
         }
+        public bool Delete(int id)
+        {
+            try
+            {
+                conn.Open();
+
+                cmd.Connection = conn;
+                cmd.CommandText = "update usuarios set deleted = '*', status = 'I' where id = @id";
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+                this.messageError = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                this.messageError = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            if (messageError.Equals(""))
+            {
+                sucess = true;
+            }
+            else
+            {
+                sucess = false;
+            }
+            return sucess;
+        }
         public MySqlDataReader Read(string search)
         {
             string[] searchRows = { };
@@ -78,7 +117,7 @@ namespace CrudCsharpMysql.model
             {
                 conn.Open();
                 cmd.Connection = conn;
-                cmd.CommandText = "select * from openxcod.usuarios where nome like @search or login like @search or email like @search ";
+                cmd.CommandText = "select * from usuarios where nome like @search and login like @search and email like @search and deleted <> '*' ";
                 cmd.Parameters.AddWithValue("@search", $"%{search}%");
                 cmd.Prepare();
 
@@ -95,8 +134,6 @@ namespace CrudCsharpMysql.model
             {
                 this.messageError = ex.Message;
             }
-
-
 
             if (messageError.Equals(""))
             {

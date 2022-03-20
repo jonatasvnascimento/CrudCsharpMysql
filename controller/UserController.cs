@@ -11,7 +11,7 @@ namespace CrudCsharpMysql.controller
     internal class UserController
     {
         public string messageError = "";
-        public bool sucessInsert, sucessUpdate, sucessDelete;
+        public bool sucessInsert, sucessDelete;
         private MySqlDataReader usersRead;
 
         public bool Insert(string name, string login, string password, string email, string status, string access, string deleted, int id)
@@ -58,6 +58,22 @@ namespace CrudCsharpMysql.controller
 
             return usersRead;
 
+        }
+        public bool Delete(int id)
+        {
+            UserCommand userCommand = new();
+            userCommand.Delete(id);
+
+            if (!userCommand.messageError.Equals(""))
+            {
+                this.messageError = userCommand.messageError;
+            }
+            else
+            {
+                sucessDelete = userCommand.sucess;
+            }
+
+            return sucessDelete;   
         }
     }
 }
